@@ -151,18 +151,18 @@ go test ./tests/benchmarks/... -bench=BenchmarkHTTP -benchmem
 
 ### Benchmark Results (Apple M2)
 
-| Benchmark | Time | Memory | Allocs |
+| Benchmark | Time (µs) | Memory | Allocs |
 |---|---|---|---|
-| `CheckAll_10 sites` | 6.3 ms | 114 KB | 1030 |
-| `CheckAll_100 sites` | 79 ms | 1.3 MB | 9428 |
-| `CheckAll_500 sites` | 404 ms | 5.8 MB | 47351 |
-| `APIStatus cached (10 sites)` | 5.8 µs | 8.7 KB | 30 |
-| `APIStatus cached (100 sites)` | 43 µs | 30 KB | 120 |
-| `SaveCheckResult (single)` | 39 µs | 666 B | 9 |
-| `GetSiteStatuses (100 records)` | 338 µs | 15 KB | 361 |
-| `GetSiteStatuses (10K records)` | 24 ms | 69 KB | 1683 |
-| `HTTP NewTransport/request` | 172 µs | 19 KB | 129 |
-| `HTTP SharedTransport` | 10.5 µs | 4.7 KB | 53 |
+| `CheckAll_10 sites` | 6,300 | 114 KB | 1030 |
+| `CheckAll_100 sites` | 79,000 | 1.3 MB | 9428 |
+| `CheckAll_500 sites` | 404,000 | 5.8 MB | 47351 |
+| `APIStatus cached (10 sites)` | 5.8 | 8.7 KB | 30 |
+| `APIStatus cached (100 sites)` | 43 | 30 KB | 120 |
+| `SaveCheckResult (single)` | 39 | 666 B | 9 |
+| `GetSiteStatuses (100 records)` | 338 | 15 KB | 361 |
+| `GetSiteStatuses (10K records)` | 24,000 | 69 KB | 1683 |
+| `HTTP NewTransport/request` | 172 | 19 KB | 129 |
+| `HTTP SharedTransport` | 10.5 | 4.7 KB | 53 |
 
 ### Key Optimizations
 
