@@ -10,6 +10,8 @@ sitemon
 
 # Test outputs
 coverage.out
+coverage_unit.out
+coverage.html
 *.test
 *.prof
 

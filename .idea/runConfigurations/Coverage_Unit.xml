@@ -1,0 +1,13 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Coverage Unit" type="GoTestRunConfiguration" factoryName="Go Test">
+    <module name="sitemon" />
+    <kind value="DIRECTORY" />
+    <directory value="$PROJECT_DIR$/tests/unit" />
+    <framework value="gotest" />
+    <method v="2">
+      <option name="GoTestBeforeRunTask" enabled="true" />
+    </method>
+    <parameters value="-race -count=1 -cover -coverprofile=coverage_unit.out -coverpkg=./internal/..." />
+    <workingDirectory value="$PROJECT_DIR$" />
+  </configuration>
+</component>
