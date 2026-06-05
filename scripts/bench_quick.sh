@@ -12,6 +12,12 @@ unset SITEMON_TELEGRAM_BOT_TOKEN
 unset SITEMON_TELEGRAM_CHAT_ID
 unset SITEMON_SITES
 
+RESULTS_DIR="results"
+mkdir -p "$RESULTS_DIR"
+
+TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+OUTPUT="$RESULTS_DIR/bench_quick_${TIMESTAMP}.txt"
+
 echo "=== Quick benchmarks (single run) ==="
 
 go test ./tests/benchmarks/... \
@@ -19,7 +25,7 @@ go test ./tests/benchmarks/... \
     -benchmem \
     -benchtime=1s \
     -count=1 \
-    -run=^$ | tee bench_quick.txt
+    -run=^$ | tee "$OUTPUT"
 
 echo ""
-echo "Results saved to: bench_quick.txt"
+echo "Results saved to: $OUTPUT"

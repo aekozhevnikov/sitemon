@@ -12,17 +12,33 @@ unset SITEMON_TELEGRAM_BOT_TOKEN
 unset SITEMON_TELEGRAM_CHAT_ID
 unset SITEMON_SITES
 
+RESULTS_DIR="results"
+mkdir -p "$RESULTS_DIR"
+
+TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+COVERAGE_FILE="$RESULTS_DIR/coverage_${TIMESTAMP}.out"
+HTML_FILE="$RESULTS_DIR/coverage_${TIMESTAMP}.html"
+LATEST_LINK="$RESULTS_DIR/coverage_latest.html"
+
 echo "=== Running tests with coverage ==="
-go test -race -coverprofile=coverage.out -coverpkg=./internal/... ./tests/unit/...
+go test -race -coverprofile="$COVERAGE_FILE" -coverpkg=./internal/... ./tests/unit/...
 
 echo ""
 echo "=== Coverage summary ==="
-go tool cover -func=coverage.out
+go tool cover -func="$COVERAGE_FILE"
 
 echo ""
 echo "=== Generating HTML report ==="
-go tool cover -html=coverage.out -o coverage.html
+go tool cover -html="$COVERAGE_FILE" -o "$HTML_FILE"
+
+# Create symlink to latest report
+ln -sf "$HTML_FILE" "$LATEST_LINK"
 
 echo ""
+echo "=== Results ==="
+echo "Coverage data: $COVERAGE_FILE"
+echo "HTML report:   $HTML_FILE"
+echo "Latest link:   $LATEST_LINK"
+echo ""
 echo "=== Opening in browser ==="
-open coverage.html
+open "$HTML_FILE"

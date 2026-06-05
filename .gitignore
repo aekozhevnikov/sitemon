@@ -17,6 +17,8 @@ coverage.html
 
 # Benchmark results
 bench_results*.txt
+results/*
+!results/.gitkeep
 
 # IDE
 .idea/*

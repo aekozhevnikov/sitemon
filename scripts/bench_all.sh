@@ -12,8 +12,12 @@ unset SITEMON_TELEGRAM_BOT_TOKEN
 unset SITEMON_TELEGRAM_CHAT_ID
 unset SITEMON_SITES
 
-OUTPUT="bench_results.txt"
-PREVIOUS="bench_results_prev.txt"
+RESULTS_DIR="results"
+mkdir -p "$RESULTS_DIR"
+
+TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+OUTPUT="$RESULTS_DIR/bench_${TIMESTAMP}.txt"
+PREVIOUS="$RESULTS_DIR/bench_previous.txt"
 
 echo "=== Running benchmarks ==="
 echo "Date: $(date)"
@@ -46,4 +50,7 @@ fi
 cp "$OUTPUT" "$PREVIOUS"
 
 echo ""
-echo "Results saved to: $OUTPUT"
+echo "=== Results ==="
+echo "Current run:  $OUTPUT"
+echo "Previous run: $PREVIOUS"
+echo "Results dir:  $RESULTS_DIR/"
