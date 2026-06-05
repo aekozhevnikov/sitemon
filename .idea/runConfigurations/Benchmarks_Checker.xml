@@ -1,0 +1,13 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Benchmarks Checker" type="GoTestRunConfiguration" factoryName="Go Test">
+    <module name="sitemon" />
+    <kind value="DIRECTORY" />
+    <directory value="$PROJECT_DIR$/tests/benchmarks" />
+    <framework value="gotest" />
+    <method v="2">
+      <option name="GoTestBeforeRunTask" enabled="true" />
+    </method>
+    <parameters value="-bench=BenchmarkCheckAll -benchmem -benchtime=3s -count=1 -run=^$" />
+    <workingDirectory value="$PROJECT_DIR$" />
+  </configuration>
+</component>

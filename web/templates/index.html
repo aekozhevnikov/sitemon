@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sitemon — Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>sitemon</h1>
+            <p class="subtitle">Site monitoring dashboard</p>
+        </header>
+
+        <main>
+            {{if .Sites}}
+            <div class="sites-grid">
+                {{range .Sites}}
+                <div class="site-card {{if .Up}}site-up{{else}}site-down{{end}}">
+                    <div class="site-header">
+                        <h2 class="site-name">{{.SiteName}}</h2>
+                        <span class="site-status">
+                            {{if .Up}}
+                                <span class="status-badge status-up">UP</span>
+                            {{else}}
+                                <span class="status-badge status-down">DOWN</span>
+                            {{end}}
+                        </span>
+                    </div>
+                    <div class="site-url">{{.URL}}</div>
+                    <div class="site-metrics">
+                        <div class="metric">
+                            <span class="metric-label">Response Time</span>
+                            <span class="metric-value">{{.ResponseTime}}</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Status Code</span>
+                            <span class="metric-value">{{.LastStatusCode}}</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Uptime (24h)</span>
+                            <span class="metric-value">{{printf "%.1f" .UptimePercent}}%</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Last Check</span>
+                            <span class="metric-value">{{.LastCheck.Format "15:04:05"}}</span>
+                        </div>
+                    </div>
+                    <div class="uptime-bar">
+                        <div class="uptime-fill" style="width: {{printf "%.1f" .UptimePercent}}%"></div>
+                    </div>
+                </div>
+                {{end}}
+            </div>
+            {{else}}
+            <div class="empty-state">
+                <p>No sites are being monitored yet. Configure sites in the config file and restart sitemon.</p>
+            </div>
+            {{end}}
+        </main>
+
+        <footer>
+            <p>Dashboard loaded at {{.CheckedAt.Format "2006-01-02 15:04:05"}} — Auto-refresh every 30s</p>
+        </footer>
+    </div>
+
+    <script>
+        // Auto-refresh the page every 30 seconds.
+        setTimeout(function() {
+            window.location.reload();
+        }, 30000);
+    </script>
+</body>
+</html>

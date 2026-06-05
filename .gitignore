@@ -1,0 +1,32 @@
+# Binaries
+bin/
+sitemon
+*.exe
+
+# Database
+*.db
+*.db-wal
+*.db-shm
+
+# Test outputs
+coverage.out
+*.test
+*.prof
+
+# IDE
+.idea/*
+!.idea/runConfigurations
+!.idea/runConfigurations/**
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+
+# Go
+vendor/
+go.work

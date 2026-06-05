@@ -1,0 +1,18 @@
+services:
+  sitemon:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sitemon
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/app/data
+      - ./configs/config.yaml:/app/configs/config.yaml:ro
+    environment:
+      - SITEMON_CHECK_INTERVAL=30s
+      - SITEMON_TIMEOUT=10s
+      # Uncomment and set these to enable Telegram notifications:
+      # - SITEMON_TELEGRAM_BOT_TOKEN=your_bot_token
+      # - SITEMON_TELEGRAM_CHAT_ID=your_chat_id
+    restart: unless-stopped

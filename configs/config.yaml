@@ -1,0 +1,378 @@
+# sitemon configuration
+check_interval: 30s
+timeout: 10s
+
+sites:
+  - name: "Google"
+    url: "https://www.google.com"
+    expected_status: 200
+  - name: "YouTube"
+    url: "https://www.youtube.com"
+    expected_status: 200
+  - name: "Facebook"
+    url: "https://www.facebook.com"
+    expected_status: 200
+  - name: "Amazon"
+    url: "https://www.amazon.com"
+    expected_status: 200
+  - name: "Wikipedia"
+    url: "https://en.wikipedia.org"
+    expected_status: 301
+  - name: "Twitter"
+    url: "https://twitter.com"
+    expected_status: 200
+  - name: "Instagram"
+    url: "https://www.instagram.com"
+    expected_status: 200
+  - name: "LinkedIn"
+    url: "https://www.linkedin.com"
+    expected_status: 200
+  - name: "Reddit"
+    url: "https://www.reddit.com"
+    expected_status: 200
+  - name: "Netflix"
+    url: "https://www.netflix.com"
+    expected_status: 200
+  - name: "Microsoft"
+    url: "https://www.microsoft.com"
+    expected_status: 200
+  - name: "Apple"
+    url: "https://www.apple.com"
+    expected_status: 200
+  - name: "GitHub"
+    url: "https://github.com"
+    expected_status: 200
+  - name: "Stack Overflow"
+    url: "https://stackoverflow.com"
+    expected_status: 302
+  - name: "DuckDuckGo"
+    url: "https://duckduckgo.com"
+    expected_status: 200
+  - name: "Bing"
+    url: "https://www.bing.com"
+    expected_status: 200
+  - name: "Yahoo"
+    url: "https://www.yahoo.com"
+    expected_status: 200
+  - name: "Baidu"
+    url: "https://www.baidu.com"
+    expected_status: 200
+  - name: "Yandex"
+    url: "https://yandex.ru"
+    expected_status: 200
+  - name: "Etsy"
+    url: "https://www.etsy.com"
+    expected_status: 200
+  - name: "Pinterest"
+    url: "https://www.pinterest.com"
+    expected_status: 200
+  - name: "Tumblr"
+    url: "https://www.tumblr.com"
+    expected_status: 301
+  - name: "Flickr"
+    url: "https://www.flickr.com"
+    expected_status: 200
+  - name: "Quora"
+    url: "https://www.quora.com"
+    expected_status: 200
+  - name: "Medium"
+    url: "https://medium.com"
+    expected_status: 200
+  - name: "WordPress"
+    url: "https://wordpress.com"
+    expected_status: 200
+  - name: "BBC"
+    url: "https://www.bbc.com"
+    expected_status: 200
+  - name: "CNN"
+    url: "https://www.cnn.com"
+    expected_status: 200
+  - name: "New York Times"
+    url: "https://www.nytimes.com"
+    expected_status: 200
+  - name: "The Guardian"
+    url: "https://www.theguardian.com"
+    expected_status: 200
+  - name: "Reuters"
+    url: "https://www.reuters.com"
+    expected_status: 200
+  - name: "Bloomberg"
+    url: "https://www.bloomberg.com"
+    expected_status: 200
+  - name: "NPR"
+    url: "https://www.npr.org"
+    expected_status: 200
+  - name: "Washington Post"
+    url: "https://www.washingtonpost.com"
+    expected_status: 200
+  - name: "ESPN"
+    url: "https://www.espn.com"
+    expected_status: 200
+  - name: "IMDb"
+    url: "https://www.imdb.com"
+    expected_status: 200
+  - name: "Hacker News"
+    url: "https://news.ycombinator.com"
+    expected_status: 200
+  - name: "Product Hunt"
+    url: "https://www.producthunt.com"
+    expected_status: 200
+  - name: "LeetCode"
+    url: "https://leetcode.com"
+    expected_status: 302
+  - name: "Codecademy"
+    url: "https://www.codecademy.com"
+    expected_status: 200
+  - name: "Udemy"
+    url: "https://www.udemy.com"
+    expected_status: 200
+  - name: "Coursera"
+    url: "https://www.coursera.org"
+    expected_status: 200
+  - name: "edX"
+    url: "https://www.edx.org"
+    expected_status: 200
+  - name: "Khan Academy"
+    url: "https://www.khanacademy.org"
+    expected_status: 200
+  - name: "NASA"
+    url: "https://www.nasa.gov"
+    expected_status: 200
+  - name: "ESA"
+    url: "https://www.esa.int"
+    expected_status: 200
+  - name: "NOAA"
+    url: "https://www.noaa.gov"
+    expected_status: 200
+  - name: "WHO"
+    url: "https://www.who.int"
+    expected_status: 200
+  - name: "United Nations"
+    url: "https://www.un.org"
+    expected_status: 200
+  - name: "World Bank"
+    url: "https://www.worldbank.org"
+    expected_status: 200
+  - name: "NATO"
+    url: "https://www.nato.int"
+    expected_status: 200
+  - name: "USA.gov"
+    url: "https://www.usa.gov"
+    expected_status: 200
+  - name: "Gov.uk"
+    url: "https://www.gov.uk"
+    expected_status: 301
+  - name: "Europa.eu"
+    url: "https://europa.eu"
+    expected_status: 200
+  - name: "Canada.ca"
+    url: "https://www.canada.ca"
+    expected_status: 200
+  - name: "Spotify"
+    url: "https://www.spotify.com"
+    expected_status: 200
+  - name: "Twitch"
+    url: "https://www.twitch.tv"
+    expected_status: 200
+  - name: "Discord"
+    url: "https://discord.com"
+    expected_status: 200
+  - name: "Slack"
+    url: "https://slack.com"
+    expected_status: 200
+  - name: "Zoom"
+    url: "https://zoom.us"
+    expected_status: 200
+  - name: "Telegram"
+    url: "https://telegram.org"
+    expected_status: 200
+  - name: "WhatsApp"
+    url: "https://www.whatsapp.com"
+    expected_status: 200
+  - name: "Dropbox"
+    url: "https://www.dropbox.com"
+    expected_status: 200
+  - name: "Salesforce"
+    url: "https://www.salesforce.com"
+    expected_status: 200
+  - name: "Shopify"
+    url: "https://www.shopify.com"
+    expected_status: 200
+  - name: "Stripe"
+    url: "https://stripe.com"
+    expected_status: 200
+  - name: "PayPal"
+    url: "https://www.paypal.com"
+    expected_status: 200
+  - name: "Uber"
+    url: "https://www.uber.com"
+    expected_status: 200
+  - name: "Airbnb"
+    url: "https://www.airbnb.com"
+    expected_status: 200
+  - name: "Booking.com"
+    url: "https://www.booking.com"
+    expected_status: 200
+  - name: "TripAdvisor"
+    url: "https://www.tripadvisor.com"
+    expected_status: 200
+  - name: "Yelp"
+    url: "https://www.yelp.com"
+    expected_status: 200
+  - name: "Indeed"
+    url: "https://www.indeed.com"
+    expected_status: 200
+  - name: "HTTPBin"
+    url: "https://httpbin.org"
+    expected_status: 200
+  - name: "Postman"
+    url: "https://www.postman.com"
+    expected_status: 200
+  - name: "Docker Hub"
+    url: "https://hub.docker.com"
+    expected_status: 200
+  - name: "npm"
+    url: "https://www.npmjs.com"
+    expected_status: 200
+  - name: "PyPI"
+    url: "https://pypi.org"
+    expected_status: 200
+  - name: "Crates.io"
+    url: "https://crates.io"
+    expected_status: 200
+  - name: "Arch Linux"
+    url: "https://archlinux.org"
+    expected_status: 200
+  - name: "Ubuntu"
+    url: "https://ubuntu.com"
+    expected_status: 200
+  - name: "Debian"
+    url: "https://www.debian.org"
+    expected_status: 200
+  - name: "Red Hat"
+    url: "https://www.redhat.com"
+    expected_status: 200
+  - name: "Cloudflare"
+    url: "https://www.cloudflare.com"
+    expected_status: 200
+  - name: "Archive.org"
+    url: "https://archive.org"
+    expected_status: 200
+  - name: "arXiv"
+    url: "https://arxiv.org"
+    expected_status: 200
+  - name: "PubMed"
+    url: "https://pubmed.ncbi.nlm.nih.gov"
+    expected_status: 200
+  - name: "Nature"
+    url: "https://www.nature.com"
+    expected_status: 200
+  - name: "Science"
+    url: "https://www.science.org"
+    expected_status: 200
+  - name: "The Economist"
+    url: "https://www.economist.com"
+    expected_status: 200
+  - name: "Forbes"
+    url: "https://www.forbes.com"
+    expected_status: 200
+  - name: "TechCrunch"
+    url: "https://techcrunch.com"
+    expected_status: 200
+  - name: "Wired"
+    url: "https://www.wired.com"
+    expected_status: 200
+  - name: "Ars Technica"
+    url: "https://arstechnica.com"
+    expected_status: 200
+  - name: "The Verge"
+    url: "https://www.theverge.com"
+    expected_status: 200
+  - name: "CNET"
+    url: "https://www.cnet.com"
+    expected_status: 200
+  - name: "Oracle"
+    url: "https://www.oracle.com"
+    expected_status: 200
+  - name: "IBM"
+    url: "https://www.ibm.com"
+    expected_status: 200
+  - name: "Intel"
+    url: "https://www.intel.com"
+    expected_status: 200
+  - name: "AMD"
+    url: "https://www.amd.com"
+    expected_status: 200
+  - name: "NVIDIA"
+    url: "https://www.nvidia.com"
+    expected_status: 200
+  - name: "Cisco"
+    url: "https://www.cisco.com"
+    expected_status: 200
+  - name: "Adobe"
+    url: "https://www.adobe.com"
+    expected_status: 200
+  - name: "SAP"
+    url: "https://www.sap.com"
+    expected_status: 200
+  - name: "Kickstarter"
+    url: "https://www.kickstarter.com"
+    expected_status: 200
+  - name: "Patreon"
+    url: "https://www.patreon.com"
+    expected_status: 200
+  - name: "Substack"
+    url: "https://substack.com"
+    expected_status: 200
+  - name: "Twilio"
+    url: "https://www.twilio.com"
+    expected_status: 200
+  - name: "DigitalOcean"
+    url: "https://www.digitalocean.com"
+    expected_status: 200
+  - name: "AWS"
+    url: "https://aws.amazon.com"
+    expected_status: 200
+  - name: "Google Cloud"
+    url: "https://cloud.google.com"
+    expected_status: 200
+  - name: "Azure"
+    url: "https://azure.microsoft.com"
+    expected_status: 200
+  - name: "Vercel"
+    url: "https://vercel.com"
+    expected_status: 200
+  - name: "Netlify"
+    url: "https://www.netlify.com"
+    expected_status: 200
+  - name: "MongoDB"
+    url: "https://www.mongodb.com"
+    expected_status: 200
+  - name: "Redis"
+    url: "https://redis.io"
+    expected_status: 200
+  - name: "Kubernetes"
+    url: "https://kubernetes.io"
+    expected_status: 200
+  - name: "Terraform"
+    url: "https://www.terraform.io"
+    expected_status: 200
+  - name: "Jenkins"
+    url: "https://www.jenkins.io"
+    expected_status: 200
+  - name: "Sentry"
+    url: "https://sentry.io"
+    expected_status: 200
+
+# Telegram credentials are loaded from environment variables:
+#   SITEMON_TELEGRAM_BOT_TOKEN
+#   SITEMON_TELEGRAM_CHAT_ID
+telegram:
+  bot_token: ""
+  chat_id: ""
+
+server:
+  addr: ":3000"
+
+storage:
+  path: "./sitemon.db"

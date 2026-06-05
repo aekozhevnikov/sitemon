@@ -1,0 +1,34 @@
+# sitemon configuration example
+# Copy this file to config.yaml and adjust values as needed.
+
+# How often to check all sites (duration string: 30s, 1m, etc.)
+check_interval: 30s
+
+# HTTP request timeout per site
+timeout: 10s
+
+# Sites to monitor
+sites:
+  - name: "Google"
+    url: "https://google.com"
+    expected_status: 200
+  - name: "GitHub"
+    url: "https://github.com"
+    expected_status: 200
+  - name: "Example"
+    url: "https://example.com"
+    expected_status: 200
+
+# Telegram bot configuration (optional)
+# Set these to enable Telegram notifications on site status changes.
+telegram:
+  bot_token: "YOUR_BOT_TOKEN"
+  chat_id: "YOUR_CHAT_ID"
+
+# Web dashboard server configuration
+server:
+  addr: ":8080"
+
+# SQLite database path
+storage:
+  path: "./sitemon.db"

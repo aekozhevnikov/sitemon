@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="sitemon" type="GoApplicationRunConfiguration" factoryName="Go Application">
+    <module name="sitemon" />
+    <kind value="PACKAGE" />
+    <package value="github.com/anthropic/sitemon/cmd/sitemon" />
+    <directory value="$PROJECT_DIR$" />
+    <filePath value="$PROJECT_DIR$/cmd/sitemon/main.go" />
+    <method v="2">
+      <option name="BuildRunConfigurationTask" enabled="true" />
+    </method>
+    <parameters value="-config ./configs/config.yaml" />
+    <workingDirectory value="$PROJECT_DIR$" />
+  </configuration>
+</component>
