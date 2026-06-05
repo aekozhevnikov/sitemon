@@ -1,16 +1,13 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Coverage HTML Report" type="GoTestRunConfiguration" factoryName="Go Test">
-    <module name="sitemon" />
-    <kind value="DIRECTORY" />
-    <directory value="$PROJECT_DIR$/tests" />
-    <framework value="gotest" />
-    <method v="2">
-      <option name="GoTestBeforeRunTask" enabled="true" />
-    </method>
-    <parameters value="-race -count=1 -cover -coverprofile=coverage.out -coverpkg=./internal/..." />
-    <workingDirectory value="$PROJECT_DIR$" />
-    <envs>
-      <env name="GOCOVERDIR" value="$PROJECT_DIR$/covdata" />
-    </envs>
+  <configuration default="false" name="Coverage HTML Report" type="ShConfigurationType">
+    <option name="SCRIPT_TEXT" value="./scripts/coverage_html.sh" />
+    <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+    <option name="SCRIPT_PATH" value="$PROJECT_DIR$/scripts/coverage_html.sh" />
+    <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+    <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+    <option name="INTERPRETER_PATH" value="/bin/bash" />
+    <envs />
+    <method v="2" />
   </configuration>
 </component>
