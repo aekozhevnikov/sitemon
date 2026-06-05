@@ -3,7 +3,6 @@ package benchmarks
 import (
 	"net/http"
 	"net/http/httptest"
-	"sync"
 	"testing"
 )
 
@@ -14,27 +13,18 @@ func BenchmarkHTTP_NewTransportPerRequest(b *testing.B) {
 	defer ts.Close()
 
 	b.ResetTimer()
-	var mu sync.Mutex
-	b.RunParallel(func(pb *testing.PB) {
-		for pb.Next() {
-			func() {
-				client := &http.Client{
-					Transport: &http.Transport{
-						MaxIdleConnsPerHost: 2,
-						DisableKeepAlives:   true,
-					},
-				}
-				resp, err := client.Get(ts.URL)
-				if err != nil {
-					mu.Lock()
-					b.Log("request error:", err)
-					mu.Unlock()
-					return
-				}
-				resp.Body.Close()
-			}()
+	for i := 0; i < b.N; i++ {
+		client := &http.Client{
+			Transport: &http.Transport{
+				DisableKeepAlives: true,
+			},
 		}
-	})
+		resp, err := client.Get(ts.URL)
+		if err != nil {
+			b.Fatal(err)
+		}
+		resp.Body.Close()
+	}
 }
 
 func BenchmarkHTTP_SharedTransport(b *testing.B) {
@@ -51,13 +41,11 @@ func BenchmarkHTTP_SharedTransport(b *testing.B) {
 	}
 
 	b.ResetTimer()
-	b.RunParallel(func(pb *testing.PB) {
-		for pb.Next() {
-			resp, err := client.Get(ts.URL)
-			if err != nil {
-				b.Fatal(err)
-			}
-			resp.Body.Close()
+	for i := 0; i < b.N; i++ {
+		resp, err := client.Get(ts.URL)
+		if err != nil {
+			b.Fatal(err)
 		}
-	})
+		resp.Body.Close()
+	}
 }
