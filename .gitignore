@@ -15,6 +15,9 @@ coverage.html
 *.test
 *.prof
 
+# Benchmark results
+bench_results*.txt
+
 # IDE
 .idea/*
 !.idea/runConfigurations
