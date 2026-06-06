@@ -1,13 +1,14 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Benchmarks Storage" type="GoTestRunConfiguration" factoryName="Go Test">
     <module name="sitemon" />
+    <working_directory value="$PROJECT_DIR$" />
+    <parameters value="-bench=BenchmarkSave -benchmem -benchtime=3s -count=1 -run=^$" />
     <kind value="DIRECTORY" />
+    <package value="github.com/anthropic/sitemon" />
     <directory value="$PROJECT_DIR$/tests/benchmarks" />
-    <framework value="gotest" />
+    <framework value="gobench" />
     <method v="2">
       <option name="GoTestBeforeRunTask" enabled="true" />
     </method>
-    <parameters value="-bench=BenchmarkSave -benchmem -benchtime=3s -count=1 -run=^$" />
-    <workingDirectory value="$PROJECT_DIR$" />
   </configuration>
 </component>

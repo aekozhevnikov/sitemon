@@ -1,13 +1,14 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Integration Tests" type="GoTestRunConfiguration" factoryName="Go Test">
     <module name="sitemon" />
+    <working_directory value="$PROJECT_DIR$" />
+    <parameters value="-race -count=1 -v" />
     <kind value="DIRECTORY" />
+    <package value="github.com/anthropic/sitemon" />
     <directory value="$PROJECT_DIR$/tests/integration" />
     <framework value="gotest" />
     <method v="2">
       <option name="GoTestBeforeRunTask" enabled="true" />
     </method>
-    <parameters value="-race -count=1 -v" />
-    <workingDirectory value="$PROJECT_DIR$" />
   </configuration>
 </component>

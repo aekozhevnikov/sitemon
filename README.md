@@ -151,28 +151,28 @@ go test ./tests/benchmarks/... -bench=BenchmarkHTTP -benchmem
 
 ### Benchmark Results (Apple M2)
 
-| Benchmark | Time (µs) | Memory | Allocs |
-|---|---|---|---|
-| `CheckAll_10 sites` | 6,300 | 114 KB | 1030 |
-| `CheckAll_100 sites` | 79,000 | 1.3 MB | 9428 |
-| `CheckAll_500 sites` | 404,000 | 5.8 MB | 47351 |
-| `APIStatus cached (10 sites)` | 5.8 | 8.7 KB | 30 |
-| `APIStatus cached (100 sites)` | 43 | 30 KB | 120 |
-| `SaveCheckResult (single)` | 39 | 666 B | 9 |
-| `GetSiteStatuses (100 records)` | 338 | 15 KB | 361 |
-| `GetSiteStatuses (10K records)` | 24,000 | 69 KB | 1683 |
-| `HTTP NewTransport/request` | 172 | 19 KB | 129 |
-| `HTTP SharedTransport` | 10.5 | 4.7 KB | 53 |
+| Benchmark | Time (ms) | Memory | Allocs |
+|---|-----------|---|---|
+| `CheckAll_10 sites` | 6,300     | 114 KB | 1030 |
+| `CheckAll_100 sites` | 79,000    | 1.3 MB | 9428 |
+| `CheckAll_500 sites` | 404,000   | 5.8 MB | 47351 |
+| `APIStatus cached (10 sites)` | 5.8       | 8.7 KB | 30 |
+| `APIStatus cached (100 sites)` | 43        | 30 KB | 120 |
+| `SaveCheckResult (single)` | 39        | 666 B | 9 |
+| `GetSiteStatuses (100 records)` | 338       | 15 KB | 361 |
+| `GetSiteStatuses (10K records)` | 24,000    | 69 KB | 1683 |
+| `HTTP NewTransport/request` | 172       | 19 KB | 129 |
+| `HTTP SharedTransport` | 10.5      | 4.7 KB | 53 |
 
 ### Key Optimizations
 
-| Optimization | Before | After | Improvement |
-|---|---|---|---|
-| **Shared HTTP Transport** | 172 µs/req | 10.5 µs/req | **16x** |
-| **TTL-cache for API** | SQL query ~2-5ms | Cache hit ~5-43µs | **50-500x** |
-| **SQLite WAL mode** | fsync per write | Batched fsync | **5-10x** |
-| **Buffered channel** | Blocking consumer | Non-blocking | At 100+ sites |
-| **Connection pool (10)** | 1 connection | 10 concurrent | Parallel writes |
+| Optimization | Before            | After             | Improvement |
+|---|-------------------|-------------------|---|
+| **Shared HTTP Transport** | 172 ms/req        | 10.5 ms/req       | **16x** |
+| **TTL-cache for API** | SQL query ~2-5ms  | Cache hit ~5-43ms | **50-500x** |
+| **SQLite WAL mode** | fsync per write   | Batched fsync     | **5-10x** |
+| **Buffered channel** | Blocking consumer | Non-blocking      | At 100+ sites |
+| **Connection pool (10)** | 1 connection      | 10 concurrent     | Parallel writes |
 
 ## API
 
